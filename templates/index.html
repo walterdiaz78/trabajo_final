@@ -1,21 +1,22 @@
-
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+    <link rel="stylesheet" href="{% static './css/style.css'%}" />
+    <link rel="icon" type="image/png" href="{% static '/media/image/favicom.png'%}." />
     <title>Bulle</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="icon" type="image/png" href="./assets/media/image/favicom.png" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
   </head>
 
   <body>
@@ -24,9 +25,9 @@
       <nav>
         <ul>
           <li><a href="./index.html">HOME</a></li>
-          <li><a href="./assets/pages/about.html">+ INFO</a></li>
-          <li><a href="./assets/pages/product.html">SHOP</a></li>
-          <li><a href="./assets/pages/contact.html">CONTACTO</a></li>
+          <li><a href="./pages/about.html">+ INFO</a></li>
+          <li><a href="./pages/product.html">SHOP</a></li>
+          <li><a href="./pages/contact.html">CONTACTO</a></li>
         </ul>
       </nav>
     </header>
@@ -70,7 +71,7 @@
           <i class="fa fa-envelope"></i>
           <span class="icon-text">Envianos un mail</span>
         </a>
-        <a href="./assets/pages/product.html">
+        <a href="./pages/product.html">
           <i class="fa fa-map-marker"></i>
           <span class="icon-text">Belgrano CABA</span>
         </a>
