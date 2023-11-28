@@ -1,12 +1,10 @@
-<!-- crear muchos archivos juntos touch pages/{productos,servicios,contacto}.html -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulle</title>
-    <link rel="stylesheet" href="../css/product.css">
     <link rel="icon" type="image/png" href="../media/image/favicom.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Agrega estos enlaces en la sección head de tu HTML para cargar Slick Carousel -->
@@ -15,21 +13,23 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static './css/product.css'%}">
+    <title>Bulle</title>
 
 
 </head>
 
 <body>
     <header>
-        <h1><a href="/index.html">BULLÉ</a></h1>
-              <nav>
-                  <ul>
-                      <li><a href="/index.html">HOME</a></li>
-                      <li><a href="./about.html">+ INFO</a></li>
-                      <li><a href="./product.html">SHOP</a></li>
-                      <li><a href="./contact.html">CONTACTO</a></li>
-                  </ul>
-              </nav>
+        <h1><a href="/">BULLÉ</a></h1>
+        <nav>
+            <ul>
+              <li><a href="/">HOME</a></li>
+              <li><a href="{% url 'info' %}">+ INFO</a></li>
+              <li><a href="{% url 'shop' %}">SHOP</a></li>
+              <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+            </ul>
+          </nav>
         
       </header>
       <main>

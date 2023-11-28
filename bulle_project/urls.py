@@ -18,8 +18,16 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import IndexPage
+from .views import InfoPage
+from .views import ContactoPage
+from .views import ShopPage
+from .views import MayoristaPage
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", IndexPage.as_view(),name="index")
+    path("", IndexPage.as_view(),name="index"),
+    path("info/", InfoPage.as_view(),name="info"),
+    path("shop/", ShopPage.as_view(),name="shop"),
+    path("contacto/", ContactoPage.as_view(),name="contacto"),
+    path("mayorista/", MayoristaPage.as_view(),name="mayorista")
 ]

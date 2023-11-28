@@ -21,13 +21,13 @@
 
   <body>
     <header>
-      <h1><a href="./index.html">BULLÉ</a></h1>
+      <h1><a href="/">BULLÉ</a></h1>
       <nav>
         <ul>
-          <li><a href="./index.html">HOME</a></li>
-          <li><a href="./pages/about.html">+ INFO</a></li>
-          <li><a href="./pages/product.html">SHOP</a></li>
-          <li><a href="./pages/contact.html">CONTACTO</a></li>
+          <li><a href="/">HOME</a></li>
+          <li><a href="{% url 'info' %}">+ INFO</a></li>
+          <li><a href="{% url 'shop' %}">SHOP</a></li>
+          <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
         </ul>
       </nav>
     </header>
