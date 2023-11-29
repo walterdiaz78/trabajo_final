@@ -14,3 +14,5 @@ class InfoPage(TemplateView):
 
 class MayoristaPage(TemplateView):
     template_name = 'mayorista.html'
+
+    

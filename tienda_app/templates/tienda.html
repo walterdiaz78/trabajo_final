@@ -1,0 +1,91 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+    <link rel="stylesheet" href="{% static './css/tienda.css'%}" />
+    <link rel="icon" type="image/png" href="{% static '/media/image/favicom.png'%}." />
+    <title>Tienda</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">BULLÉ</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li><a href="{% url 'info' %}">+ INFO</a></li>
+          <li><a href="{% url 'shop' %}">SHOP</a></li>
+          <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <div>
+            <h2>Tiendas</h2>
+            <h2><a href="{% url 'tienda:create' %}">Crear una tienda</a></h2>
+            <div class="list">
+                {% for tienda in tienda_list %}
+                <fieldset class="tienda-box">
+                    <legend>Nombre: {{tienda.nombre}}</legend>
+                    <ul>
+                        <li>Direccion de la tienda: {{tienda.ubicacion}}</li>
+                        <li>Contacto: {{tienda.contacto}}</li>
+                        <li>Rubro: {{tienda.rubro}}</li>
+                        <li>Fecha de alta: {{tienda_fecha_habilitacion}}</li>
+                    </ul>
+
+                    <div>
+                        
+                        <a href="{% url 'tienda:detail' tienda.id %}">Detalle de {{tienda.nombre}} 🟢</a>
+                    </div>
+                    <div>
+                        
+                        <a href="{% url 'tienda:delete' tienda.id %}">Borrar {{tienda.nombre}} ❌</a>
+                    </div>
+                    <div>
+                        <label for="">Editar</label>
+                        <a href="{% url 'tienda:update' tienda.id %}">Editar {{tienda.nombre}} 📎</a>
+                    </div>
+                </fieldset>
+                {% endfor %}
+            </div>
+        </div>
+      
+    </main>
+
+    <footer class="footer">
+      <div class="caja-footer">
+        <a href="https://www.instagram.com/bulle.arg">
+          <i class="fa fa-instagram"></i>
+          <span class="icon-text">Seguinos en Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/Bulle.arg">
+          <i class="fa fa-facebook"></i>
+          <span class="icon-text">Seguinos en Facebook</span>
+        </a>
+        <a href="mailto:bulle.bikinis@gmail.com">
+          <i class="fa fa-envelope"></i>
+          <span class="icon-text">Envianos un mail</span>
+        </a>
+        <a href="./pages/product.html">
+          <i class="fa fa-map-marker"></i>
+          <span class="icon-text">Belgrano CABA</span>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

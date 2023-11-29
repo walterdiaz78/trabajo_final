@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
 
 from .views import IndexPage
 from .views import InfoPage
@@ -29,5 +30,7 @@ urlpatterns = [
     path("info/", InfoPage.as_view(),name="info"),
     path("shop/", ShopPage.as_view(),name="shop"),
     path("contacto/", ContactoPage.as_view(),name="contacto"),
-    path("mayorista/", MayoristaPage.as_view(),name="mayorista")
+    path("mayorista/", MayoristaPage.as_view(),name="mayorista"),
+    path("tienda/", include("tienda_app.urls"))
 ]
+
