@@ -33,6 +33,11 @@ CUSTOM_APPS = [
     "tienda_app"
 ]
 
+EXTERNAL_APPS = [
+    "rest_framework"
+]
+
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -42,7 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_APPS += CUSTOM_APPS
+INSTALLED_APPS += CUSTOM_APPS + EXTERNAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
