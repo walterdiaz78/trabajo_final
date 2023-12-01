@@ -1,0 +1,55 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+    <link rel="stylesheet" href="{% static './css/tienda_detail.css'%}" />
+    <link rel="icon" type="image/png" href="{% static '/media/image/favicom.png'%}" />
+    <title>Borrea tienda</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">BULLÉ</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li><a href="{% url 'info' %}">+ INFO</a></li>
+          <li><a href="{% url 'shop' %}">SHOP</a></li>
+          <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <div>
+            <h2>Estas seguro que deseas borrar esta tienda?</h2>
+            <h2>{{tienda.nombre}}</h2>
+            <form method='POST'>
+                {% csrf_token %} {{form.as_p}}
+                <input type="submit" value="{{ tipo }}" />
+            </form>
+
+            <a href="{% url 'tienda:all' %}">Cancelar</a>
+                
+        </div>
+        
+    </main>
+    
+
+    <footer>
+    </footer>
+  </body>
+</html>
